@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Pedido {
 
@@ -11,8 +12,19 @@ public class Pedido {
 	}
 
 	public void addProducto() {
-		// TODO - implement Pedido.addProducto
-		throw new UnsupportedOperationException();
+		productos.add(new Producto());
 	}
 
+	public String setNombre() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingrese el nombre del producto: ");
+		String name = scanner.next();
+		return name;
+	}
+	@Override
+	public String toString() {
+		return "Pedido{" +
+				"productos=" + productos +
+				'}';
+	}
 }

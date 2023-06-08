@@ -3,31 +3,58 @@ package org.example;
 import java.util.Scanner;
 
 public class Menu {
+    public Menu() {
+        Vendedor Jose = new Vendedor();
+        Pedido compra1 = new Pedido();
+        Producto jabon = new Producto();
+        launch(Jose, compra1,jabon);
+    }
 
-    public static void launch() {
-        int eleccion2 = mostrarOpcionesMenu();
-        switch (eleccion2) {
-            case 1:
-                int eleccion = mostrarOpcionesClases();
-                switch (eleccion) {
-                    case 1:
-
-                    case 2:
-
-                    case 3:
-                    default:
-                        System.out.println("Saliendo...");
-                        break;
-                }
-                break;
-            case 2:
-
-            case 3:
-
-            case 4:
-
-            default:
-                System.out.println("Opción no valida");
+    public void launch(Vendedor vend,Pedido ped, Producto prod) {
+        boolean mantenerProgramaActivo = true;
+        while (mantenerProgramaActivo) {
+            int eleccion3 = mostrarOpcionesMenu();
+            switch (eleccion3) {
+                case 1: //Ver Objeto
+                    int eleccion = mostrarOpcionesClases();
+                    switch (eleccion) {
+                        case 1:
+                            prod.toString();
+                            break;
+                        case 2:
+                            ped.toString();
+                            break;
+                        case 3:
+                            vend.toString();
+                            break;
+                        default:
+                            System.out.println("Saliendo...");
+                            break;
+                    }
+                    break;
+                case 2: //Modificar Objeto
+                    int eleccion2 = mostrarOpcionesClases();
+                    switch (eleccion2) {
+                        case 1:
+                            prod.setNombre();
+                            break;
+                        case 2:
+                            ped.setNombre();
+                            break;
+                        case 3:
+                            vend.setNombre();
+                            break;
+                        default:
+                            System.out.println("Saliendo...");
+                            break;
+                    }
+                    break;
+                case 3:
+                    mantenerProgramaActivo = false;
+                    break;
+                default:
+                    System.out.println("Opción no valida");
+            }
         }
     }
 
